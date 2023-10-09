@@ -1,6 +1,17 @@
-// const { default: Peer } = require("peerjs");
+//let peer;
+var peer = null;
 
-const { default: Peer } = require("peerjs");
+peer = new Peer(null, {
+    host: "localhost",
+    port: 9090,
+    path: "/peerserver",
+});
+
+peer.on('open', function(id) {
+    alert(id);
+    document.getElementById("mydiv").innerHTML(id);
+
+});
 
 function openStream() {
     const config = { audio: false, video: true};
@@ -16,17 +27,16 @@ function playStream(idVideoTag, stream) {
 openStream()
 .then(stream => playStream('localStream', stream));
 
-// const peer = new Peer({key: 'zfoh5xhzll900000'});
 
-// peer.on('open', id => console.log(id));
 
-const CONFIG_NON_STUN_TURN_SERVER = {
+
+/*const CONFIG_NON_STUN_TURN_SERVER = {
     host: "127.0.0.1",
     port: 9090,
     path: '/peerserver'    
 };
 
-let peer = new Peer('null', CONFIG_NON_STUN_TURN_SERVER);
+let peer = new Peer('null', CONFIG_NON_STUN_TURN_SERVER);*/
 
 
 

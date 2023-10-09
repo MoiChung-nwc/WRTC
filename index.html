@@ -5,22 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="jquery.js"></script>
-    <script src="peer.js"></script>
-    <script src="server.js"></script>
-    <script>
-        const peer = new Peer("someid", {
-            host: "localhost",
-            port: 9000,
-            path: "/myapp",
-        });
-    </script>
+    <script src="https://unpkg.com/peerjs@1.5.1/dist/peerjs.min.js"></script>
+    <script src="main.js"></script>
+
 </head>
 <body>
+    <div id="mydiv"></div>
     <video id="localStream" width="300" controls></video>
     <br /><br />
     <video id="remoteStream" width="300" controls></video>
     <br /><br />
 </body>
-    <script src="main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/peerjs@0.3.20/dist/peer.min.js"></script> 
 </html>
