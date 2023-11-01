@@ -3,17 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="jquery.js"></script>
+    <title>WRTC</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://unpkg.com/peerjs@1.5.1/dist/peerjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.js"></script>
     <script src="main.js"></script>
 
+    
 </head>
 <body>
-    <div id="mydiv"></div>
-    <video id="localStream" width="300" controls></video>
+    <div id="div-chat">
+        <p>Online User:</p>
+        <ul id="ulUser">
+                
+        </ul>
+        <h3 id="mydiv">Your ID: </h3>
+        <video id="localStream" width="300" controls>
+            <audio id="gum-local" controls autoplay></audio>
+        </video>
+        <br /><br />
+        <video id="remoteStream" width="300" controls></video>
+        <br /><br />
+        <input type="text" id="remoteID" placeholder="Remote ID">
+        <button id="btnCall">Call</button>
+    </div>
     <br /><br />
-    <video id="remoteStream" width="300" controls></video>
-    <br /><br />
+    <div id="div-dang-ky">
+        <input type="text" id="txtUsername" placeholder="Enter your username">
+        <button id="btnSignUp">Sign Up</button>
+    </div>
+
+    <script>
+        const socket = io('http://localhost:3001');
+
+        socket.on('connection');
+    </script>
 </body>
 </html>
+
